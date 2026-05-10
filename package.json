@@ -1,0 +1,29 @@
+{
+  "name": "events_sf",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/timefliesidont/Event-SF#readme",
+  "bugs": {
+    "url": "https://github.com/timefliesidont/Event-SF/issues"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@11.6.2" ,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timefliesidont/Event-SF.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "devDependencies": {
+    "turbo": "^2.9.12"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
+  }
+}
