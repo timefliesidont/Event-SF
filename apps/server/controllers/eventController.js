@@ -118,6 +118,14 @@ export const createEvent = async (req, res) => {
         organizer_id,
       });
 
+      const io = req.io;
+      if (io) {
+        io.emit('eventCreated' );
+        console.log("One event was recently created ");
+      } else {
+        console.error("Socket.IO instance not available in event controller.");
+      }
+
       if (!result.success) {
         return res.status(500).json({ msg: result.msg });
       }

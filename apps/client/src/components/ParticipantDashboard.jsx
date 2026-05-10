@@ -38,6 +38,19 @@ const ParticipantDashboard = () => {
       }
     });
 
+    socket.on("eventCreated", (eventId) => {
+      console.log("Event created:", eventId);
+      if (activeTab === "my") {
+        fetchMyEvents(filter);
+      } else {
+        fetchParticipantEvents(filter);
+      }
+    });
+
+    return () => {
+      socket.off("eventCreated");
+    };
+
     return () => {
       socket.off("eventDeleted");
     };

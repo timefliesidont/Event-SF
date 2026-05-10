@@ -18,6 +18,15 @@ const OrganizerDashboard = () => {
       console.log("Event deleted:", eventId);
       fetchOrganizerEvents(); 
     });
+
+    socket.on("eventCreated", (eventId) => {
+      console.log("Event created:", eventId);
+      fetchOrganizerEvents(); 
+    });
+
+    return () => {
+      socket.off("eventCreated");
+    }
     
     return () => {
       socket.off("eventDeleted");
